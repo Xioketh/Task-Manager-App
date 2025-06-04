@@ -1,0 +1,25 @@
+/* Global Dark Theme */
+:root {
+  --text-primary: #121212;
+  --bg-card: #1e1e1e;
+  --primary: #bb86fc;
+  --primary-dark: #3700b3;
+  --secondary: #03dac6;
+  --text-primary: #e1e1e1;
+  --text-secondary: #a1a1a1;
+  --danger: #cf6679;
+}
+
+body {
+  background-color: var(--text-primary);
+  color: var(--bg-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Styles */
+/*.form-control {*/
+/*  background-color: #2d2d2d;*/
+/*  border: 1px solid #444;*/
+/*  color: var(--text-primary);*/
+/*}*/
+

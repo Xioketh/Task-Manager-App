@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo_db:27017/taskdb
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_app
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:

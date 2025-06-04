@@ -1,0 +1,52 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Task List</h2>
+    <button class="btn btn-primary px-4 py-2" (click)="addTask()">
+      <i class="bi bi-plus-circle me-2"></i>Add Task
+    </button>
+  </div>
+
+  <div class="card p-3">
+    <div class="table-responsive">
+      <table class="table table-hover table-borderless">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th class="text-end">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+          <td class="align-middle">{{ task.title }}</td>
+          <td class="align-middle">
+              <span class="badge"
+                    [ngClass]="{
+                      'bg-primary': task.status === 'TO_DO',
+                      'bg-warning text-dark': task.status === 'IN_PROGRESS',
+                      'bg-success': task.status === 'DONE'
+                    }">
+                {{ task.status }}
+              </span>
+          </td>
+          <td class="align-middle">{{ task.createdAt | date: 'medium' }}</td>
+          <td class="text-end">
+            <div class="btn-group" role="group">
+              <button class="btn btn-sm btn-info me-2" (click)="editTask(task.id!)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="deleteTask(task.id!)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr *ngIf="tasks.length === 0">
+          <td colspan="4" class="text-center text-muted py-4">No tasks found. Create your first task!</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
