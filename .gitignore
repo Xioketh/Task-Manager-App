@@ -29,7 +29,7 @@ testem.log
 .firebase/
 
 # Frontend (Angular) specific
-/node_modules/
+# /node_modules/
 /dist/
 /aot/
 /.cache/

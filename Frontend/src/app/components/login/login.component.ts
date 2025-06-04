@@ -17,22 +17,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
     sessionStorage.clear();
-
   }
 
   onSubmit() {
     this.auth.login(this.username, this.password).subscribe({
       next: (response) => {
-
-        console.log(response.token)
+        // console.log(response.token)
         const token = response.token;
         sessionStorage.setItem('token', token ?? '');
         this.router.navigate(['/list']);
-        // if (response.success) {
-        //   this.router.navigate(['/']);
-        // } else {
-        //   this.error = response.message || 'Login failed';
-        // }
+
       },
       error: (err) => {
         console.log(err);
