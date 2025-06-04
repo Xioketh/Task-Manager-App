@@ -1,4 +1,4 @@
-# 🌐 Full-Stack Application with Angular & Spring Boot
+# 🌐 Task Manager Application with Angular & Spring Boot
 
 A robust full-stack web application featuring:
 
