@@ -36,7 +36,7 @@ Make sure you have the following installed:
 ## Clone the Repository
 
 ```bash
-https://github.com/Xioketh/Task-Manager-App.git
+git clone https://github.com/Xioketh/Task-Manager-App.git
 
 cd Task-Manager-App
 ```
